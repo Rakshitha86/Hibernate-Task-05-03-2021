@@ -76,6 +76,16 @@ public class FlightServiceImpl implements FlightService {
 	}
 
 	@Override
+	public void validAndRead(int flightId) {
+		if (flightId > 0) {
+			System.out.println(" id is valid, can read: " + flightId);
+			this.dao.readFlight(flightId);
+		} else {
+			System.out.println("invalid id");
+		}
+	}
+
+	@Override
 	public void validateAndUpdate(int flightId) {
 		if (flightId > 0) {
 			System.out.println(" id is valid, can update: " + flightId);
@@ -96,4 +106,5 @@ public class FlightServiceImpl implements FlightService {
 		}
 	}
 
+	
 }
